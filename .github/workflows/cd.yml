@@ -13,9 +13,6 @@ jobs:
     steps:
       - name: Realiza o checkout
         uses: actions/checkout@v2
-      
-      - name: Project Django
-        run: cd django_linkedlist/
 
       - name: Deploy no Heroku
         uses: akhileshns/heroku-deploy@v3.12.12
