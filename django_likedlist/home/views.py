@@ -6,8 +6,8 @@ from home.utils.linkedlist import LinkedList
 list_new = LinkedList()
 
 def index(request):
-    option = float(request.POST.get('option'))    
-    value = float(request.POST.get('number'))
+    option = int(request.POST.get('option'))    
+    value = int(request.POST.get('number'))
 
 
     if option == 1 and value != None:
@@ -32,4 +32,6 @@ def index(request):
 
     print(f'\nTemplate: {list_template}')
 
-    return render(request, 'index.html')
+    return render(request, 'index.html', {
+        'list_display': list_template 
+    })
