@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,45 +9,41 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
-    <title>Desafio #01</title>
+    <title>Exercício 1 e 2</title>
 </head>
-
 {% block conteudo %}
-
-
 <body>
     <form method="POST" action="{% url 'index' %}">
         {% csrf_token %}
-    <div class="mx-auto" style="width: 600px;">
-        <br>
-        <h2>Lista: {{list_display}}</h2>
-        <br>
-        <h5>Selecione uma opção abaixo (para "Insert" ou "Append" adicione um valor no campo)</h5> 
-        <br>
-        <select name="option" class="form-select" aria-label="Default select example">
-           
-            <option value="1">Insert</option>
-            <option value="2">Append</option>
-            <option value="3">RemoveFirst</option>
-        </select>
-        <br>
-        <div class="input-group mb-3">
-            <span class="input-group-text" id="basic-addon1">Novo Valor na Lista</span>
-            <input name="number" value="{{request.POST.number}}" type="number" class="form-control" placeholder="7" aria-label="Username" aria-describedby="basic-addon1">
-          </div>
+        <div class="mx-auto" style="width: 600px;">
+            <br>
+            <h5>Exercícios 1 e 2 para a vaga de Desenvolvedor Python na QIPU</h5>
+            <br>
+            <h2>Lista: {{list_display}}</h2>
+            <br>
+            <h5>Selecione uma opção abaixo (para "Insert" ou "Append" adicione um valor no campo)</h5>
+            <br>
+            <select name="option" class="form-select" aria-label="Default select example">
 
-        
-        {% include '_messages.html' %}
-        <div class="mb-3">
+                <option value="1">Insert</option>
+                <option value="2">Append</option>
+                <option value="3">RemoveFirst</option>
+            </select>
+            <br>
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">Novo Valor na Lista</span>
+                <input name="number" value="{{request.POST.number}}" type="number" class="form-control" placeholder="7"
+                    aria-label="Username" aria-describedby="basic-addon1">
+            </div>
 
-            <button type="submit" class="btn btn-success">Update List</button>
+            {% include '_messages.html' %}
 
+            <div class="mb-3">
+                <button type="submit" class="btn btn-success">Atualizar Lista Encadeada</button>
+            </div>
         </div>
-    </div>
-</form>
+    </form>
 
 </body>
-
 {% endblock %}
-
 </html>
