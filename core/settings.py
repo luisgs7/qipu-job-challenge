@@ -19,7 +19,7 @@ import dotenv
 dotenv.load_dotenv(dotenv.find_dotenv())
 
 key = os.getenv("SECRET_KEY") 
-debug = os.getenv("DEBUG")
+debug_app = os.getenv("DEBUG_APP")
 host_app = os.getenv("ALLOWED_HOSTS")
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -33,7 +33,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = f'{key}'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = debug
+DEBUG = debug_app
 
 ALLOWED_HOSTS = host_app
 
