@@ -33,7 +33,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = f'{key}'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = f'{debug}'
+DEBUG = debug
 
 ALLOWED_HOSTS = host_app
 
