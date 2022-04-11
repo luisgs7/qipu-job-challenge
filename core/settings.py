@@ -22,6 +22,13 @@ key = os.getenv("SECRET_KEY")
 debug_app = os.getenv("DEBUG_APP")
 host_app = os.getenv("ALLOWED_HOSTS")
 
+user_db = os.getenv("USER_DB")
+password_db = os.getenv("PASSWORD_DB")
+host_db = os.getenv("HOST_DB")
+name_db = os.getenv("NAME_DB")
+port_db = os.getenv('PORT_DB')
+
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -88,10 +95,15 @@ WSGI_APPLICATION = 'core.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+        'ENGINE': 'django.db.backends.postgresql',
+        'USER': f'{user_db}',
+        'PASSWORD': f'{password_db}',
+        'HOST': f'{host_db}',
+        'NAME': f'{name_db}',
+        'PORT': f'{port_db}',
+       }
 }
+
 
 
 # Password validation
