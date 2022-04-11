@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,15 +11,19 @@
     <title>Desafio #01</title>
 </head>
 
-<body>
+{% block conteudo %}
 
+
+<body>
+    <form method="POST" action="{% url 'index' %}">
+        {% csrf_token %}
     <div class="mx-auto" style="width: 600px;">
         <br>
-        <h2>Lista: [1, 2, 3]</h2>
+        <h2>Lista: {{list_template}}</h2>
         <br>
         <h5>Selecione uma opção abaixo (para "Insert" ou "Append" adicione um valor no campo)</h5> 
         <br>
-        <select class="form-select" aria-label="Default select example">
+        <select name="option" class="form-select" aria-label="Default select example">
            
             <option value="1">Insert</option>
             <option value="2">Append</option>
@@ -29,17 +32,20 @@
         <br>
         <div class="input-group mb-3">
             <span class="input-group-text" id="basic-addon1">Novo Valor na Lista</span>
-            <input type="text" class="form-control" placeholder="7" aria-label="Username" aria-describedby="basic-addon1">
+            <input name="number" value="{{request.POST.number}}" type="number" class="form-control" placeholder="7" aria-label="Username" aria-describedby="basic-addon1">
           </div>
 
         <br>
         <div class="mb-3">
 
-            <button type="button" class="btn btn-success">Update List</button>
+            <button type="submit" class="btn btn-success">Update List</button>
 
         </div>
     </div>
+</form>
 
 </body>
+
+{% endblock %}
 
 </html>
