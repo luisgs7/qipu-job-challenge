@@ -29,5 +29,5 @@ http://0.0.0.0:8080/
 
 <img src="https://github.com/luisgs7/Qipu-job-challenge/blob/main/screen/qipu.png">
 
-#### Este app foi realizado o deploy no heroku, entretanto ele não funciona muito bem, pois os dados são rapidamente perdidos, link abaixo:
+* Este app foi realizado o deploy no heroku, entretanto ele não funciona muito bem, pois os dados são rapidamente perdidos, mas de forma local funciona corretamente, link abaixo:
 https://qipu-challenge.herokuapp.com/
